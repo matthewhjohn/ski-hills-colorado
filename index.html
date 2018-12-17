@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>Final Project</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ultra:400" rel="stylesheet">
+
+
+	<style>
+		/*
+			UKy Colors:
+            #c7c9c8 light gray
+            #63666a dark gray
+            #15397f dark blue
+            #009bda light blue
+            #0033a0 official blue
+        */
+		body {
+			margin: 0;
+			padding: 0;
+			/* background: #e3e3e6; */
+      background: #fff;
+			/* font-weight: 300; */
+			color: #3d3d3d;
+			font-size: 100%;
+			/* 16px is default browser size */
+
+		}
+
+		header,
+		section,
+		footer {
+			width: 80%;
+			margin: 10px auto;
+		}
+
+		h1 {
+			font-weight: 900;
+			font-size: 5.8em;
+      font-family: 'ultra', serif;
+			/* font-style: italic; */
+			/* The em unit. 3x the current size */
+			letter-spacing: .02em;
+			/* margin: 5px 0; */
+			/* text-transform: uppercase; */
+      margin-top:0px;
+		}
+
+		h2 {
+			font-family: 'ultra', serif;
+			font-weight: 300;
+			color: #63666a;
+			font-size: 2.2em;
+			letter-spacing: .06em;
+			/* font-style: italic; */
+			/* margin: 5px 0; */
+      margin-top:0px;
+      margin-bottom:0px;
+      text-transform: uppercase;
+      text-transform: underline;
+		}
+
+		h3 {
+			font-weight: 300i;
+			font-size: 1.5em;
+			margin-bottom: 5px;
+		}
+
+		p {
+			font-family: 'Lato', sans-serif;
+      font-size: 1.1em;
+			line-height: 1.8em;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: #004A8B;
+			font-weight: 400;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		ul {
+      			font-family: 'Lato', sans-serif;
+      padding: 0px 20px 4px 20px;
+			font-size: 1.1em;
+			line-height: 1.2em;
+			color: #63666a;
+		}
+
+		li {
+			margin: 10px 0
+		}
+
+		hr {
+			/* margin: 20px 0; */
+			border: 0;
+			height: 1px;
+			background: #63666a;
+		}
+
+		.linkbox {
+			margin: 3px 0 20px 0;
+			display: block;
+			font-size: 0.9em;
+			font-weight: 300;
+			line-height: 1.3em;
+		}
+
+		#map {
+			width: 100%;
+			height: 800px;
+			margin: 20px auto;
+
+		}
+
+		.max-image-width {
+			width: 100%;
+		}
+
+		/* Use float property to make two-column layout */
+		.first-column {
+			float: left;
+			width: 49%;
+			padding-right: 2%;
+		}
+
+		.column {
+			float: left;
+			width: 49%;
+		}
+
+		/* Clear floats after the columns */
+		.row::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		/* When browser is 900px wide or less */
+		@media screen and (max-width: 900px) {
+
+			.first-column,
+			.second-column {
+				width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<h2>Colorado's</h2>
+    <h1>Ski Mountains</h1>
+    <hr>
+	</header>
+	<section>
+		<div class="row">
+			<div id="map"></div>
+
+			<div class="first-column">
+				<h2>Ski Mountain Stats</h2>
+
+        <hr>
+        <p><b>Social links</b></p>
+				<ul>
+					<li>See my projects on <a href="https://github.com/matthewhjohn">Github</a>.</li>
+					<li>Follow me on twitter: <a href="https://twitter.com/matthewhjohn">@matthewhjohn</a></li>
+				</ul>
+
+
+			</div>
+			<div class="column">
+				<img class="max-image-width" src="https://www.livinginlittleton.com/mydata/images/Skier_000005651628Medium.jpg" title="Monroe Power Plant">
+				<div class="linkbox">
+					Colorado is an internationally renowned snow skiing destination.
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<hr>
+
+		<a href="https://newmapsplus.github.io">
+			<img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png" alt="University of Kentucky Geography">
+		</a>
+
+		<a href="https://uky-gis.github.io">
+			<img src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png" alt="University of Kentucky Geography">
+		</a>
+
+	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.4/leaflet.js"></script>
+  <script src="data/mountains.js"></script>
+	<script>
+		// map options
+		var options = {
+			center: [39, -106.5],
+      zoomSnap: .1,
+      zoom: 7.8
+
+		}
+
+		// create a Leaflet map in our division container with id of 'map'
+		var map = L.map('map', options);
+
+		// Leaflet providers base map URL
+		var basemap_source =
+			'https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}'
+
+		// Leaflet providers attributes
+    var tiles = L.tileLayer('https://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+
+    console.log(mountains);
+
+    mountains.features.sort(function(a, b) {
+      return b.properties.acreage - a.properties.acreage;
+    });
+
+    var skiHills = L.geoJson(mountains, {
+
+			pointToLayer: function(feature,latlng) {
+				return L.circleMarker(latlng, {
+					color: 'darkgray',
+					weight: 1,
+					fillColor: "#ffffff",
+				 	fillOpacity: .9,
+					radius: getRadius(feature.properties.acreage)
+				});
+			},
+			onEachFeature : function(feature,layer) {
+				layer.on("mouseover", function() {
+					layer.setStyle({
+						fillColor: "lightblue"
+					});
+				});
+				layer.on("mouseout", function() {
+					layer.setStyle({
+						fillColor: "#ffffff"
+					});
+				});
+				// name of ski hill in toolip
+				layer.bindTooltip(
+					"<b>" + layer.feature.properties.name + "</b><br>" +
+					"<b>vertical drop: </b>" +
+          layer.feature.properties.vertical + " feet" +
+					"<br><b>skiable acres: </b>" + layer.feature.properties.acreage +
+					"<br><b>annual snowfall: </b>" + layer.feature.properties.averageSnowfall + " in." +
+					"<br><b>days open: </b>" + layer.feature.properties.daysOpen +
+					"<br><b>price per day: </b> $" + layer.feature.properties.price
+
+				);
+			}
+		}).addTo(map);
+
+		skiHills.on('click', function(e) {
+				//access the click event through the parameter "e"
+					console.log(e.latlng);
+
+			map.setView(e.latlng, 11);
+			layer.bindPopup(
+				"<b>" + layer.feature.properties.name + "</b><br>" +
+				"<b>vertical drop: </b>" +
+				layer.feature.properties.vertical + " feet" +
+				"<br><b>skiable acres: </b>" + layer.feature.properties.acreage +
+				"<br><b>annual snowfall: </b>" + layer.feature.properties.averageSnowfall + " in." +
+				"<br><b>days open: </b>" + layer.feature.properties.daysOpen +
+				"<br><b>price per day: </b> $" + layer.feature.properties.price
+
+			);
+
+
+		});
+
+		skiHills.on('popupclose', function(e) {
+				//access the click event through the parameter "e"
+
+			map.setView([39, -106.5], 7.8);
+
+		});
+
+    // L.geoJson(plants, {
+		//
+		// 	filter: function(feature) {
+		// 		if (feature.properties.fuel_source.Coal &&
+		// 		    feature.properties.fuel_source.Petroleum) {
+		// 		    return feature;
+		// 		}
+		// 	},
+		// 	// onEachFeature: function(feature, layer) {
+		// 	//
+		// 	// 	if (feature.properties.fuel_source.Coal) {
+		// 	// 	   	layer.setStyle({
+		// 	// 		    fillColor: 'red',
+		// 	// 		    radius: getRadius(feature.properties.fuel_source.Coal)
+		// 	// 	   	});
+		// 	// 	} else if (feature.properties.fuel_source.Hydro) {
+		// 	// 	   	layer.setStyle({
+		// 	// 	     	fillColor: 'blue',
+		// 	// 	     	radius: getRadius(feature.properties.fuel_source.Hydro)
+		// 	// 	   	});
+		// 	// 	}
+		// 	// },
+		// 	pointToLayer: function(feature,latlng) {
+		// 		return L.circleMarker(latlng, {
+		// 			color: 'red',
+		// 			weight: 1,
+		// 			fillColor: 'orange',
+		// 		 	fillOpacity: .6,
+		// 			radius: getRadius(feature.properties.capacity_mw)
+		// 		});
+		// 	},
+		// 	onEachFeature : function(feature,layer) {
+		// 		layer.on("mouseover", function() {
+		// 			layer.setStyle({
+		// 				fillColor: "red"
+		// 			});
+		// 		});
+		// 		layer.on("mouseout", function() {
+		// 			layer.setStyle({
+		// 				fillColor: "orange"
+		// 			});
+		// 		});
+		// 		// name of power plant in toolip
+		// 		layer.bindTooltip(
+		// 		// 	"<b>" + layer.feature.properties.plant_name + "</b>" + "<br>" +
+		// 		// 	layer.feature.properties.capacity_mw + " MW" + "<br>" +
+		// 		// 	"<b>Coal:</b> " +
+		// 		// 	layer.feature.properties.fuel_source.Coal + " MW" + "<br>" +
+		// 		// 	"<b>Petroleum:</b> " + layer.feature.properties.fuel_source.Petroleum + " MW"
+		// 		// );
+		// 	}
+		// }).addTo(map);
+
+		function getRadius(area) {
+		  var radius = Math.sqrt(area/Math.PI);
+		  return radius * .8;
+		}
+	</script>
+
+</body>
+
+</html>
