@@ -16,7 +16,11 @@ var mountains = {
         "acreage": 1428,
         "daysOpen": 230,
         "averageSnowfall": 350,
+        "lifts": 9,
+        "tow ropes": 3,
+        "longest run": 1.5,
         "cost": 84,
+        "score": 166,
         "url": "https://www.arapahoebasin.com/"
       },
       "geometry": {
@@ -33,7 +37,11 @@ var mountains = {
         "acreage": 5517,
         "daysOpen": 138,
         "averageSnowfall": 300,
-        "cost": 179,
+        "lifts": 40,
+        "tow ropes": 9,
+        "longest run": 5.3,
+        "cost": 209,
+        "score": 44,
         "url": "https://www.aspensnowmass.com/"
       },
       "geometry": {
@@ -50,7 +58,12 @@ var mountains = {
         "acreage": 1832,
         "daysOpen": 145,
         "averageSnowfall": 323,
-        "price": 179,
+        "price": 209,
+        "lifts": 24,
+        "tow ropes": 9,
+        "longest run": 2.8,
+        "cost": 209,
+        "score": 43,
         "url": "https://www.beavercreek.com/"
       },
       "geometry": {
@@ -67,7 +80,11 @@ var mountains = {
         "acreage": 2908,
         "daysOpen": 182,
         "averageSnowfall": 300,
+        "lifts": 35,
+        "tow ropes": 15,
+        "longest run": 3.5,
         "price": 159,
+        "score": 60,
         "url": "https://www.breckenridge.com/"
       },
       "geometry": {
@@ -84,7 +101,11 @@ var mountains = {
         "acreage": 2490,
         "daysOpen": 164,
         "averageSnowfall": 300,
-        "price": 117,
+        "lifts": 24,
+        "tow ropes": 9,
+        "longest run": 3.5,
+        "price": 158,
+        "score": 55,
         "url": "https://www.coppercolorado.com/"
       },
       "geometry": {
@@ -101,7 +122,11 @@ var mountains = {
         "acreage": 1547,
         "daysOpen": 145,
         "averageSnowfall": 234,
+        "lifts": 15,
+        "tow ropes": 5,
+        "longest run": 2.6,
         "price": 113,
+        "score": 83,
         "url": "http://www.skicb.com/"
       },
       "geometry": {
@@ -118,7 +143,11 @@ var mountains = {
         "acreage": 680,
         "daysOpen": 147,
         "averageSnowfall": 311,
+        "lifts": 10,
+        "tow ropes": 3,
+        "longest run": 3,
         "price": 119,
+        "score": 64,
         "url": "https://www.eldora.com/"
       },
       "geometry": {
@@ -135,7 +164,11 @@ var mountains = {
         "acreage": 406,
         "daysOpen": 116,
         "averageSnowfall": 220,
+        "lifts": 5,
+        "tow ropes": 1,
+        "longest run": .6,
         "price": 84,
+        "score": 31,
         "url": "https://www.granbyranch.com/"
       },
       "geometry": {
@@ -152,7 +185,11 @@ var mountains = {
         "acreage": 3148,
         "daysOpen": 184,
         "averageSnowfall": 235,
-        "price": 131,
+        "lifts": 20,
+        "tow ropes": 8,
+        "longest run": 3.5,
+        "price": 169,
+        "score": 45,
         "url": "https://www.keystoneresort.com/"
       },
       "geometry": {
@@ -169,7 +206,11 @@ var mountains = {
         "acreage": 1800,
         "daysOpen": 205,
         "averageSnowfall": 422,
+        "lifts": 11,
+        "tow ropes": 2,
+        "longest run": 2,
         "price": 79,
+        "score": 229,
         "url": "https://skiloveland.com/"
       },
       "geometry": {
@@ -186,7 +227,11 @@ var mountains = {
         "acreage": 800,
         "daysOpen": 143,
         "averageSnowfall": 350,
+        "lifts": 7,
+        "tow ropes": 2,
+        "longest run": 1,
         "price": 89,
+        "score": 101,
         "url": "https://www.skimonarch.com/"
       },
       "geometry": {
@@ -203,7 +248,11 @@ var mountains = {
         "acreage": 1600,
         "daysOpen": 111,
         "averageSnowfall": 250,
+        "lifts": 5,
+        "tow ropes": 2,
+        "longest run": 1.5,
         "price": 70,
+        "score": 110,
         "url": "http://www.powderhorn.com/"
       },
       "geometry": {
@@ -220,7 +269,11 @@ var mountains = {
         "acreage": 1605,
         "daysOpen": 130,
         "averageSnowfall": 260,
+        "lifts": 12,
+        "tow ropes": 3,
+        "longest run": 1.3,
         "price": 69,
+        "score": 204,
         "url": "https://www.purgatoryresort.com/"
       },
       "geometry": {
@@ -237,7 +290,11 @@ var mountains = {
         "acreage": 1819,
         "daysOpen": 175,
         "averageSnowfall": 400,
+        "lifts": 1,
+        "tow ropes": 0,
+        "longest run": 1.3,
         "price": 79,
+        "score": 103,
         "url": "http://silvertonmountain.com/"
       },
       "geometry": {
@@ -254,7 +311,11 @@ var mountains = {
         "acreage": 400,
         "daysOpen": 130,
         "averageSnowfall": 260,
+        "lifts": 4,
+        "tow ropes": 2,
+        "longest run": 1,
         "price": 56,
+        "score": 53,
         "url": "https://www.skicooper.com/"
       },
       "geometry": {
@@ -271,7 +332,11 @@ var mountains = {
         "acreage": 2695,
         "daysOpen": 145,
         "averageSnowfall": 336,
+        "lifts": 18,
+        "tow ropes": 3,
+        "longest run": 3,
         "price": 149,
+        "score": 69,
         "url": "https://www.steamboat.com/"
       },
       "geometry": {
@@ -288,7 +353,11 @@ var mountains = {
         "acreage": 680,
         "daysOpen": 100,
         "averageSnowfall": 250,
+        "lifts": 3,
+        "tow ropes": 0,
+        "longest run": 2.5,
         "price": 65,
+        "score": 81,
         "url": "https://sunlightmtn.com/"
       },
       "geometry": {
@@ -305,7 +374,11 @@ var mountains = {
         "acreage": 2000,
         "daysOpen": 131,
         "averageSnowfall": 280,
+        "lifts": 19,
+        "tow ropes": 5,
+        "longest run": 4.6,
         "price": 139,
+        "score": 75,
         "url": "https://www.tellurideskiresort.com/"
       },
       "geometry": {
@@ -322,7 +395,11 @@ var mountains = {
         "acreage": 5289,
         "daysOpen": 149,
         "averageSnowfall": 354,
-        "price": 171,
+        "lifts": 31,
+        "tow ropes": 9,
+        "longest run": 4,
+        "price": 209,
+        "score": 43,
         "url": "http://www.vail.com/"
       },
       "geometry": {
@@ -339,7 +416,11 @@ var mountains = {
         "acreage": 3081,
         "daysOpen": 158,
         "averageSnowfall": 360,
+        "lifts": 25,
+        "tow ropes": 5,
+        "longest run": 4.9,
         "price": 149,
+        "score": 76,
         "url": "https://www.winterparkresort.com/"
       },
       "geometry": {
@@ -356,7 +437,11 @@ var mountains = {
         "acreage": 1600,
         "daysOpen": 130,
         "averageSnowfall": 430,
+        "lifts": 10,
+        "tow ropes": 3,
+        "longest run": 2,
         "price": 72,
+        "score": 258,
         "url": "https://wolfcreekski.com/"
       },
       "geometry": {
