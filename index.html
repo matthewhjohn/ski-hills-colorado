@@ -329,18 +329,23 @@
 					layer.feature.properties.vertical + " feet" +
 					"<br><b>skiable acres: </b>" + layer.feature.properties.acreage + "</small>"
 
-				layer.on("mouseover", function () {
-					layer.setStyle({
-						fillColor: "lightblue"
+				if (!L.Browser.mobile) {
+
+					layer.on("mouseover", function () {
+						layer.setStyle({
+							fillColor: "lightblue"
+						});
 					});
-				});
-				layer.on("mouseout", function () {
-					layer.setStyle({
-						fillColor: "#ffffff"
+					layer.on("mouseout", function () {
+						layer.setStyle({
+							fillColor: "#ffffff"
+						});
 					});
-				});
-				// name of ski hill in toolip
-				layer.bindTooltip(popup);
+					// name of ski hill in toolip
+					layer.bindTooltip(popup);
+				} else {
+					layer.bindPopup(popup);
+				}
 			}
 		}).addTo(map);
 
